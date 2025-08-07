@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/kyanhvo/GitHub/artscii/build",
+  "command": "/usr/bin/c++  -I/Users/kyanhvo/GitHub/artscii/include -std=gnu++17 -arch arm64 -o CMakeFiles/artscii.dir/src/img_manager.cpp.o -c /Users/kyanhvo/GitHub/artscii/src/img_manager.cpp",
+  "file": "/Users/kyanhvo/GitHub/artscii/src/img_manager.cpp",
+  "output": "CMakeFiles/artscii.dir/src/img_manager.cpp.o"
+},
+{
+  "directory": "/Users/kyanhvo/GitHub/artscii/build",
+  "command": "/usr/bin/c++  -I/Users/kyanhvo/GitHub/artscii/include -std=gnu++17 -arch arm64 -o CMakeFiles/artscii.dir/src/main.cpp.o -c /Users/kyanhvo/GitHub/artscii/src/main.cpp",
+  "file": "/Users/kyanhvo/GitHub/artscii/src/main.cpp",
+  "output": "CMakeFiles/artscii.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/kyanhvo/GitHub/artscii/build",
+  "command": "/usr/bin/c++  -I/Users/kyanhvo/GitHub/artscii/include -std=gnu++17 -arch arm64 -o CMakeFiles/artscii.dir/src/png_decoder.cpp.o -c /Users/kyanhvo/GitHub/artscii/src/png_decoder.cpp",
+  "file": "/Users/kyanhvo/GitHub/artscii/src/png_decoder.cpp",
+  "output": "CMakeFiles/artscii.dir/src/png_decoder.cpp.o"
+}
+]

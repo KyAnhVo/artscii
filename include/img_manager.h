@@ -1,0 +1,75 @@
+#ifndef IMG_MANAGER_H
+#define IMG_MANAGER_H
+
+#include <cstdint>
+
+/**
+ * @brief a luminance view of an Img_Manager, containing
+ * luminance of the origianl image.
+ */
+class Luminance_View {
+public:
+    uint32_t height, width;
+    float * luminance;
+
+    /**
+     * @brief create Luminance_View object that has initialized empty luminance array
+     *
+     * @param height height of luminance image
+     * @param width width of luminance image
+     */
+    Luminance_View(uint16_t, uint16_t);
+
+    /**
+     * @brief change the brightness of the picture according to the scaling param
+     *
+     * @param scaling scales the image's brightness, must be between 0 and 1.
+     *
+     * @note note that if all pixels fall below 0.1 luminance then it's an empty square
+     */
+    void rebright(float);
+};
+
+class Img_Manager {
+public:
+    uint8_t * r, * g, * b;
+    uint32_t height, width;
+
+    // constructor
+
+    /**
+     * @brief create Img_Manager object that has initialized empty rgb arrays
+     */
+    Img_Manager(uint16_t, uint16_t);
+
+    // methods
+
+    /**
+     * @brief downsize the image's height by a factor of height_downsize
+     * and width by width_downsize
+     *
+     * @param height_downsize The factor to downsize height
+     * @param width_downsize The factor to downsize width
+     * @return The pointer to a new Img_Manager downsized by
+     * those factors.
+     */
+    Img_Manager * downsize(uint8_t, uint8_t);
+
+    /**
+     * @brief recolor the image to its luminance analysis
+     *
+     * Each pixel's luminance value is calculated by first summing 
+     * the rgb value with their corresponding factor (subject to change
+     * during development) then divide by 255 (since 0-255 is range of rgb)
+     *
+     * @return a vector of luminance value.
+     * @note for the image's size and how to imagine the luminance on a picture,
+     * use this image's height and width.
+     */
+    Luminance_View * luminance();
+    
+};
+
+
+
+#endif
