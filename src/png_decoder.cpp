@@ -70,7 +70,7 @@ Png::Png(std::string file_name) {
 
 
     this->bit_depth = static_cast<uint8_t>(bit_depth);
-    this->color_type = static_cast<uint8_t>(bit_depth);
+    this->color_type = static_cast<uint8_t>(color_type);
     this->img_manager = new Img_Manager(height, width);
     
 }
