@@ -31,7 +31,7 @@ Img_Manager * Img_Manager::downsize(uint8_t height_downsize_ratio, uint8_t width
     
     for (uint32_t downsized_row = 0; downsized_row < downsized_image->height; downsized_row++) {
         for (uint32_t downsized_column = 0; downsized_column < downsized_image->width; downsized_column++) {
-
+            // TODO: complete this function
         }
     }
 
