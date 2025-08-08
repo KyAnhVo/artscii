@@ -29,9 +29,53 @@ Img_Manager * Img_Manager::downsize(uint8_t height_downsize_ratio, uint8_t width
             this->height / height_downsize_ratio, this->width / width_downsize_ratio);
     uint64_t block_area = height_downsize_ratio * width_downsize_ratio;
     
+    // for the 4 for loops, consider that a picture's array of (h, w) image
+    // looks like a (h, 4w) 2d array, with is then expressed as a 4wh 1d array.
+    // where rows in the 2d are added together.
+    
     for (uint32_t downsized_row = 0; downsized_row < downsized_image->height; downsized_row++) {
         for (uint32_t downsized_column = 0; downsized_column < downsized_image->width; downsized_column++) {
-            // TODO: complete this function
+            
+            // for each downsized pixel, we get the average weighted rgb value (weighted by a).
+            // a is max(a), to preserve bordering.
+
+            uint32_t starting_row = downsized_row * height_downsize_ratio,
+                     starting_column = downsized_column * width_downsize_ratio;
+            uint64_t r_tot = 0, g_tot = 0, b_tot = 0, a_tot = 0;
+            uint8_t max_a = 0;
+
+            for (uint32_t row = starting_row; row < starting_row + height_downsize_ratio; row++) {
+                for (uint32_t col = starting_column; col < starting_column + width_downsize_ratio; col++) {
+                    uint64_t ind = (this->width * row + col) * 4;
+
+                    uint8_t curr_r = this->rgba[ind + 0],
+                            curr_g = this->rgba[ind + 1],
+                            curr_b = this->rgba[ind + 2],
+                            curr_a = this->rgba[ind + 3];
+
+                    max_a = max_a < curr_a ? curr_a : max_a;
+
+                    r_tot += curr_r * curr_a;
+                    g_tot += curr_g * curr_a;
+                    b_tot += curr_b * curr_a;
+                    a_tot += curr_a;
+                }
+            }
+
+            uint64_t downsized_ind = (downsized_row * downsized_image->width + downsized_column) * 4;
+
+            if (max_a > 0) {
+                downsized_image->rgba[downsized_ind + 0] = static_cast<uint8_t>(r_tot / a_tot);
+                downsized_image->rgba[downsized_ind + 1] = static_cast<uint8_t>(g_tot / a_tot);
+                downsized_image->rgba[downsized_ind + 2] = static_cast<uint8_t>(b_tot / a_tot);
+            }
+            else {
+                downsized_image->rgba[downsized_ind + 0] = 0;
+                downsized_image->rgba[downsized_ind + 1] = 0;
+                downsized_image->rgba[downsized_ind + 2] = 0;
+            }
+
+            downsized_image->rgba[downsized_ind + 3] = max_a;
         }
     }
 
