@@ -1,1 +1,1 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/artscii.dir/src/img_manager.cpp.o CMakeFiles/artscii.dir/src/main.cpp.o CMakeFiles/artscii.dir/src/png_decoder.cpp.o -o artscii
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/artscii.dir/src/img_manager.cpp.o CMakeFiles/artscii.dir/src/main.cpp.o CMakeFiles/artscii.dir/src/png_decoder.cpp.o -o artscii  /opt/homebrew/lib/libpng.dylib /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd

@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/kyanhvo/GitHub/artscii/src/img_manager.cpp" "CMakeFiles/artscii.dir/src/img_manager.cpp.o" "gcc" "CMakeFiles/artscii.dir/src/img_manager.cpp.o.d"
-  "/Users/kyanhvo/GitHub/artscii/src/main.cpp" "CMakeFiles/artscii.dir/src/main.cpp.o" "gcc" "CMakeFiles/artscii.dir/src/main.cpp.o.d"
-  "/Users/kyanhvo/GitHub/artscii/src/png_decoder.cpp" "CMakeFiles/artscii.dir/src/png_decoder.cpp.o" "gcc" "CMakeFiles/artscii.dir/src/png_decoder.cpp.o.d"
+  "/Users/kyanhvo/projects/artscii/src/img_manager.cpp" "CMakeFiles/artscii.dir/src/img_manager.cpp.o" "gcc" "CMakeFiles/artscii.dir/src/img_manager.cpp.o.d"
+  "/Users/kyanhvo/projects/artscii/src/main.cpp" "CMakeFiles/artscii.dir/src/main.cpp.o" "gcc" "CMakeFiles/artscii.dir/src/main.cpp.o.d"
+  "/Users/kyanhvo/projects/artscii/src/png_decoder.cpp" "CMakeFiles/artscii.dir/src/png_decoder.cpp.o" "gcc" "CMakeFiles/artscii.dir/src/png_decoder.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/kyanhvo/GitHub/artscii/build/cmake_install.cmake"
+		"/Users/kyanhvo/projects/artscii/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

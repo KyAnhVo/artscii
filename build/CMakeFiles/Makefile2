@@ -54,10 +54,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kyanhvo/GitHub/artscii
+CMAKE_SOURCE_DIR = /Users/kyanhvo/projects/artscii
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kyanhvo/GitHub/artscii/build
+CMAKE_BINARY_DIR = /Users/kyanhvo/projects/artscii/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/artscii.dir/clean
 CMakeFiles/artscii.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/artscii.dir/build.make CMakeFiles/artscii.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/artscii.dir/build.make CMakeFiles/artscii.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kyanhvo/GitHub/artscii/build/CMakeFiles --progress-num=1,2,3,4 "Built target artscii"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kyanhvo/projects/artscii/build/CMakeFiles --progress-num=1,2,3,4 "Built target artscii"
 .PHONY : CMakeFiles/artscii.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/artscii.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kyanhvo/GitHub/artscii/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kyanhvo/projects/artscii/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/artscii.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kyanhvo/GitHub/artscii/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kyanhvo/projects/artscii/build/CMakeFiles 0
 .PHONY : CMakeFiles/artscii.dir/rule
 
 # Convenience name for target.
@@ -102,7 +102,7 @@ artscii: CMakeFiles/artscii.dir/rule
 # codegen rule for target.
 CMakeFiles/artscii.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/artscii.dir/build.make CMakeFiles/artscii.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kyanhvo/GitHub/artscii/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target artscii"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/kyanhvo/projects/artscii/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target artscii"
 .PHONY : CMakeFiles/artscii.dir/codegen
 
 # clean rule for target.

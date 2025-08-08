@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kyanhvo/GitHub/artscii
+CMAKE_SOURCE_DIR = /Users/kyanhvo/projects/artscii
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kyanhvo/GitHub/artscii/build
+CMAKE_BINARY_DIR = /Users/kyanhvo/projects/artscii/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/artscii.dir/depend.make
@@ -73,46 +73,46 @@ CMakeFiles/artscii.dir/codegen:
 .PHONY : CMakeFiles/artscii.dir/codegen
 
 CMakeFiles/artscii.dir/src/img_manager.cpp.o: CMakeFiles/artscii.dir/flags.make
-CMakeFiles/artscii.dir/src/img_manager.cpp.o: /Users/kyanhvo/GitHub/artscii/src/img_manager.cpp
+CMakeFiles/artscii.dir/src/img_manager.cpp.o: /Users/kyanhvo/projects/artscii/src/img_manager.cpp
 CMakeFiles/artscii.dir/src/img_manager.cpp.o: CMakeFiles/artscii.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kyanhvo/GitHub/artscii/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/artscii.dir/src/img_manager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/artscii.dir/src/img_manager.cpp.o -MF CMakeFiles/artscii.dir/src/img_manager.cpp.o.d -o CMakeFiles/artscii.dir/src/img_manager.cpp.o -c /Users/kyanhvo/GitHub/artscii/src/img_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kyanhvo/projects/artscii/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/artscii.dir/src/img_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/artscii.dir/src/img_manager.cpp.o -MF CMakeFiles/artscii.dir/src/img_manager.cpp.o.d -o CMakeFiles/artscii.dir/src/img_manager.cpp.o -c /Users/kyanhvo/projects/artscii/src/img_manager.cpp
 
 CMakeFiles/artscii.dir/src/img_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/artscii.dir/src/img_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyanhvo/GitHub/artscii/src/img_manager.cpp > CMakeFiles/artscii.dir/src/img_manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyanhvo/projects/artscii/src/img_manager.cpp > CMakeFiles/artscii.dir/src/img_manager.cpp.i
 
 CMakeFiles/artscii.dir/src/img_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/artscii.dir/src/img_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyanhvo/GitHub/artscii/src/img_manager.cpp -o CMakeFiles/artscii.dir/src/img_manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyanhvo/projects/artscii/src/img_manager.cpp -o CMakeFiles/artscii.dir/src/img_manager.cpp.s
 
 CMakeFiles/artscii.dir/src/main.cpp.o: CMakeFiles/artscii.dir/flags.make
-CMakeFiles/artscii.dir/src/main.cpp.o: /Users/kyanhvo/GitHub/artscii/src/main.cpp
+CMakeFiles/artscii.dir/src/main.cpp.o: /Users/kyanhvo/projects/artscii/src/main.cpp
 CMakeFiles/artscii.dir/src/main.cpp.o: CMakeFiles/artscii.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kyanhvo/GitHub/artscii/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/artscii.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/artscii.dir/src/main.cpp.o -MF CMakeFiles/artscii.dir/src/main.cpp.o.d -o CMakeFiles/artscii.dir/src/main.cpp.o -c /Users/kyanhvo/GitHub/artscii/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kyanhvo/projects/artscii/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/artscii.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/artscii.dir/src/main.cpp.o -MF CMakeFiles/artscii.dir/src/main.cpp.o.d -o CMakeFiles/artscii.dir/src/main.cpp.o -c /Users/kyanhvo/projects/artscii/src/main.cpp
 
 CMakeFiles/artscii.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/artscii.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyanhvo/GitHub/artscii/src/main.cpp > CMakeFiles/artscii.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyanhvo/projects/artscii/src/main.cpp > CMakeFiles/artscii.dir/src/main.cpp.i
 
 CMakeFiles/artscii.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/artscii.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyanhvo/GitHub/artscii/src/main.cpp -o CMakeFiles/artscii.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyanhvo/projects/artscii/src/main.cpp -o CMakeFiles/artscii.dir/src/main.cpp.s
 
 CMakeFiles/artscii.dir/src/png_decoder.cpp.o: CMakeFiles/artscii.dir/flags.make
-CMakeFiles/artscii.dir/src/png_decoder.cpp.o: /Users/kyanhvo/GitHub/artscii/src/png_decoder.cpp
+CMakeFiles/artscii.dir/src/png_decoder.cpp.o: /Users/kyanhvo/projects/artscii/src/png_decoder.cpp
 CMakeFiles/artscii.dir/src/png_decoder.cpp.o: CMakeFiles/artscii.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kyanhvo/GitHub/artscii/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/artscii.dir/src/png_decoder.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/artscii.dir/src/png_decoder.cpp.o -MF CMakeFiles/artscii.dir/src/png_decoder.cpp.o.d -o CMakeFiles/artscii.dir/src/png_decoder.cpp.o -c /Users/kyanhvo/GitHub/artscii/src/png_decoder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kyanhvo/projects/artscii/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/artscii.dir/src/png_decoder.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/artscii.dir/src/png_decoder.cpp.o -MF CMakeFiles/artscii.dir/src/png_decoder.cpp.o.d -o CMakeFiles/artscii.dir/src/png_decoder.cpp.o -c /Users/kyanhvo/projects/artscii/src/png_decoder.cpp
 
 CMakeFiles/artscii.dir/src/png_decoder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/artscii.dir/src/png_decoder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyanhvo/GitHub/artscii/src/png_decoder.cpp > CMakeFiles/artscii.dir/src/png_decoder.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kyanhvo/projects/artscii/src/png_decoder.cpp > CMakeFiles/artscii.dir/src/png_decoder.cpp.i
 
 CMakeFiles/artscii.dir/src/png_decoder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/artscii.dir/src/png_decoder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyanhvo/GitHub/artscii/src/png_decoder.cpp -o CMakeFiles/artscii.dir/src/png_decoder.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kyanhvo/projects/artscii/src/png_decoder.cpp -o CMakeFiles/artscii.dir/src/png_decoder.cpp.s
 
 # Object files for target artscii
 artscii_OBJECTS = \
@@ -127,8 +127,10 @@ artscii: CMakeFiles/artscii.dir/src/img_manager.cpp.o
 artscii: CMakeFiles/artscii.dir/src/main.cpp.o
 artscii: CMakeFiles/artscii.dir/src/png_decoder.cpp.o
 artscii: CMakeFiles/artscii.dir/build.make
+artscii: /opt/homebrew/lib/libpng.dylib
+artscii: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd
 artscii: CMakeFiles/artscii.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/kyanhvo/GitHub/artscii/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable artscii"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/kyanhvo/projects/artscii/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable artscii"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/artscii.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -140,6 +142,6 @@ CMakeFiles/artscii.dir/clean:
 .PHONY : CMakeFiles/artscii.dir/clean
 
 CMakeFiles/artscii.dir/depend:
-	cd /Users/kyanhvo/GitHub/artscii/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kyanhvo/GitHub/artscii /Users/kyanhvo/GitHub/artscii /Users/kyanhvo/GitHub/artscii/build /Users/kyanhvo/GitHub/artscii/build /Users/kyanhvo/GitHub/artscii/build/CMakeFiles/artscii.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/kyanhvo/projects/artscii/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kyanhvo/projects/artscii /Users/kyanhvo/projects/artscii /Users/kyanhvo/projects/artscii/build /Users/kyanhvo/projects/artscii/build /Users/kyanhvo/projects/artscii/build/CMakeFiles/artscii.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/artscii.dir/depend
 

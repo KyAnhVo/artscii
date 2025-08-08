@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/kyanhvo/GitHub/artscii/include
+CXX_INCLUDES = -I/Users/kyanhvo/projects/artscii/include -isystem /opt/homebrew/include
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
 
