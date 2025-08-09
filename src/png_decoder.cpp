@@ -66,11 +66,53 @@ Png::Png(std::string file_name) {
             &width, &height, (int* ) &bit_depth, (int *) &color_type, 
             nullptr, nullptr, nullptr);
 
-    // change format if necessary
+    // change format to rgba
 
+    // ensure bit_depth max is 8
+    if (bit_depth == 16) {
+        png_set_strip_16(this->img_ptr);
+        bit_depth = 8;
+    }
+
+    // ensure if grey then it is grey 8.
+    if ((color_type == PNG_COLOR_TYPE_GRAY || color_type == PNG_COLOR_TYPE_GRAY_ALPHA) && bit_depth < 8) {
+        png_set_expand_gray_1_2_4_to_8(this->img_ptr);
+        bit_depth = 8;
+    }
+
+    // change GRAY to RGB
+    if (color_type == PNG_COLOR_TYPE_GRAY) {
+        png_set_gray_to_rgb(this->img_ptr);
+        color_type = PNG_COLOR_TYPE_RGB;
+    }
+
+    // change GRAY_ALPHA to RGBA
+    if (color_type == PNG_COLOR_TYPE_GRAY_ALPHA) {
+        png_set_gray_to_rgb(this->img_ptr);
+        color_type = PNG_COLOR_TYPE_RGBA;
+    }
+
+    // change PALLETE to RGB
+    if (color_type == PNG_COLOR_TYPE_PALETTE) {
+        png_set_palette_to_rgb(this->img_ptr);
+        color_type = PNG_COLOR_TYPE_RGB;
+    }
+
+    // change RGB to RGBA
+    if (color_type == PNG_COLOR_TYPE_RGB) {
+        png_set_add_alpha(img_ptr, 0xFF, PNG_FILLER_AFTER);
+        color_type = PNG_COLOR_TYPE_RGBA;
+    }
+
+    // reset data of info_ptr and pull down ihdr metadata values for safety
+    png_read_update_info(img_ptr, info_ptr);
+    png_get_IHDR(this->img_ptr, this->info_ptr, 
+            &width, &height, (int* ) &bit_depth, (int *) &color_type, 
+            nullptr, nullptr, nullptr);
+    
+    // Stores metadata in object <this>
 
     this->bit_depth = static_cast<uint8_t>(bit_depth);
     this->color_type = static_cast<uint8_t>(color_type);
     this->img_manager = new Img_Manager(height, width);
-    
 }
