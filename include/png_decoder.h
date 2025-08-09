@@ -20,6 +20,21 @@ public:
      * @param file_name the path to the file
      */
     Png(std::string);
+
+    /**
+     * @brief read image to this->img_manager
+     */
+    void read_image();
+
+    /**
+     * Downscale the image in img_manager
+     */
+    void downscale(uint8_t, uint8_t);
+
+    /**
+     *
+     */
+    char* to_ascii();
 };
 
 #endif

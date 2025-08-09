@@ -10,7 +10,7 @@
 class Luminance_View {
 private:
 public:
-    static constexpr char artscii_chars[] = " .,:;!+*oe&#MW%@";
+    static constexpr char artscii_chars[] = " .-=+*#@";
     uint32_t height, width;
     float * luminance;
 

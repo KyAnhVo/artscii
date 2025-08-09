@@ -705,6 +705,7 @@ CMakeFiles/artscii.dir/src/main.cpp.o: /Users/kyanhvo/projects/artscii/src/main.
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/sched.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/runetype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sched.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/setjmp.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stddef.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h \
@@ -829,7 +830,11 @@ CMakeFiles/artscii.dir/src/main.cpp.o: /Users/kyanhvo/projects/artscii/src/main.
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
-  /Users/kyanhvo/projects/artscii/include/img_manager.h
+  /Users/kyanhvo/projects/artscii/include/img_manager.h \
+  /Users/kyanhvo/projects/artscii/include/png_decoder.h \
+  /opt/homebrew/include/png.h \
+  /opt/homebrew/include/pngconf.h \
+  /opt/homebrew/include/pnglibconf.h
 
 CMakeFiles/artscii.dir/src/png_decoder.cpp.o: /Users/kyanhvo/projects/artscii/src/png_decoder.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1486,8 +1491,6 @@ CMakeFiles/artscii.dir/src/png_decoder.cpp.o: /Users/kyanhvo/projects/artscii/sr
 
 /Users/kyanhvo/projects/artscii/include/png_decoder.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/setjmp.h:
-
 /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/17/include/limits.h:
@@ -1523,12 +1526,6 @@ CMakeFiles/artscii.dir/src/png_decoder.cpp.o: /Users/kyanhvo/projects/artscii/sr
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/types.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/errno.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hyperbolic_functions.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hypot.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/appleapiopts.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_wchar_t.h:
 
@@ -1625,6 +1622,14 @@ CMakeFiles/artscii.dir/src/png_decoder.cpp.o: /Users/kyanhvo/projects/artscii/sr
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ios:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stddef.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hyperbolic_functions.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hypot.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/appleapiopts.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/setjmp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/math.h:
 
@@ -2548,9 +2553,9 @@ CMakeFiles/artscii.dir/src/png_decoder.cpp.o: /Users/kyanhvo/projects/artscii/sr
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/endian.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef:
-
 /Users/kyanhvo/projects/artscii/src/png_decoder.cpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/operations.h:
 

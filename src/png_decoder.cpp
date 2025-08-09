@@ -7,6 +7,11 @@
 #include <stdio.h>
 #include <stdexcept>
 
+#define WIDTH_DOWNSIZE  8
+#define HEIGHT_DOWNSIZE 16
+
+#define BACKGROUND_IMG 255, 255, 255
+
 
 Png::Png(std::string file_name) {
     // open file
@@ -115,4 +120,29 @@ Png::Png(std::string file_name) {
     this->bit_depth = static_cast<uint8_t>(bit_depth);
     this->color_type = static_cast<uint8_t>(color_type);
     this->img_manager = new Img_Manager(height, width);
+}
+
+void Png::read_image() {
+    // poing all of row pointers to its corresponding place
+    // in this->img_manager->rgba
+    
+    png_bytep * row_ptr = new png_bytep[this->img_manager->height];
+    for (uint32_t i = 0; i < this->img_manager->height; i++) {
+        row_ptr[i] = this->img_manager->rgba + 4 * i * this->img_manager->width;
+    }
+
+    png_read_image(this->img_ptr, row_ptr);
+    delete[] row_ptr;
+}
+
+void Png::downscale(uint8_t height, uint8_t width) {
+    Img_Manager * ptr = this->img_manager->downsize(height, width);
+    delete this->img_manager;
+    this->img_manager = ptr;
+}
+
+char* Png::to_ascii() {
+    this->downscale(HEIGHT_DOWNSIZE, WIDTH_DOWNSIZE);
+    Luminance_View * lum = this->img_manager->luminance(BACKGROUND_IMG);
+    return lum->gen_artscii();
 }

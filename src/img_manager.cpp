@@ -103,7 +103,7 @@ Luminance_View * Img_Manager::luminance(uint8_t r, uint8_t g, uint8_t b) {
 char * Luminance_View::gen_artscii() {
     char * artscii = new char[this->width * this->height];
     for (uint64_t i = 0; i < this->width * this->height; i++) {
-        uint8_t brightness_level = static_cast<uint8_t>(this->luminance[i] * 15.999f);
+        uint8_t brightness_level = static_cast<uint8_t>(this->luminance[i] * 7.999f);
         artscii[i] = Luminance_View::artscii_chars[brightness_level];
     }
     return artscii;
