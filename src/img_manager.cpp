@@ -85,7 +85,7 @@ Img_Manager * Img_Manager::downsize(uint8_t height_downsize_ratio, uint8_t width
 Luminance_View * Img_Manager::luminance(uint8_t r, uint8_t g, uint8_t b) {
     Luminance_View * luminance = new Luminance_View(this->height, this->width);
 
-    for (uint32_t i = 0; i < this->height * this->width; i += 4) {
+    for (uint32_t i = 0; i < this->height * this->width * 4; i += 4) {
         float alpha = this->rgba[i + 3] / 255.0;
         float not_alpha = 1 - alpha;
 
@@ -98,4 +98,13 @@ Luminance_View * Img_Manager::luminance(uint8_t r, uint8_t g, uint8_t b) {
     }
 
     return luminance;
+}
+
+char * Luminance_View::gen_artscii() {
+    char * artscii = new char[this->width * this->height];
+    for (uint64_t i = 0; i < this->width * this->height; i++) {
+        uint8_t brightness_level = static_cast<uint8_t>(this->luminance[i] * 31.999f);
+        artscii[i] = Luminance_View::artscii_chars[brightness_level];
+    }
+    return artscii;
 }

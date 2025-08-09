@@ -20,13 +20,6 @@ public:
      * @param file_name the path to the file
      */
     Png(std::string);
-
-    /**
-     * @brief show the artscii file over Vulkan window
-     */
-    std::string gen_artscii();
-
-    
 };
 
 #endif

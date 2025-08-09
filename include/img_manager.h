@@ -8,6 +8,8 @@
  * luminance of the origianl image.
  */
 class Luminance_View {
+private:
+    static constexpr char artscii_chars[] = " .'`^\",:;Il!i><~+_-?][}{)(|\\/tfjrxnoe*#MW&8%B@";
 public:
     uint32_t height, width;
     float * luminance;
@@ -21,13 +23,14 @@ public:
     Luminance_View(uint32_t, uint32_t);
 
     /**
-     * @brief change the brightness of the picture according to the scaling param
+     * create a char array size width * height where each character is
+     * its artscii representation of the luminance view.
+     * 
+     * @return char array of the char array
      *
-     * @param scaling scales the image's brightness, must be between 0 and 1.
-     *
-     * @note note that if all pixels fall below 0.1 luminance then it's an empty square
+     * @note reminder to delete the char arr after using.
      */
-    void rebright(float);
+    char * gen_artscii();
 };
 
 class Img_Manager {
@@ -73,7 +76,5 @@ public:
     Luminance_View * luminance(uint8_t r, uint8_t g, uint8_t b);
     
 };
-
-
 
 #endif
