@@ -4,9 +4,18 @@
 #include "png_decoder.h"
 
 int main(int argc, char ** argv) {
-    if (argc != 2) {
-        std::cerr << "require './artscii <file_name'" << std::endl;
+    if (argc != 2 && argc != 3) {
+        std::cerr << "require './artscii <file_name>'" << std::endl;
         return 1;
+    }
+    
+    uint8_t scale_down;
+    if (argc == 2) {
+        scale_down = 1;
+    }
+    else {
+        std::cout << "downscale = " << argv[2] << std::endl;
+        scale_down = argv[2][0] - '0';
     }
     
     Png * img;
@@ -19,7 +28,9 @@ int main(int argc, char ** argv) {
     }
 
     img->read_image();
+    img->downscale(scale_down, scale_down);
     std::cout << img->img_manager->height << 'x' << img->img_manager->width << std::endl << std::endl;
+    img->downscale(2, 2);
     char* text = img->to_ascii();
     uint64_t ind = 0;
     for (int i = 0; i < img->img_manager->height; i++) {

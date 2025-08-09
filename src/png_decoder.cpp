@@ -7,8 +7,8 @@
 #include <stdio.h>
 #include <stdexcept>
 
-#define WIDTH_DOWNSIZE  8
-#define HEIGHT_DOWNSIZE 16
+#define WIDTH_DOWNSIZE  1
+#define HEIGHT_DOWNSIZE 2
 
 #define BACKGROUND_IMG 255, 255, 255
 
