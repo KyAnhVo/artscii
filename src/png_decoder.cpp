@@ -141,8 +141,9 @@ void Png::downscale(uint8_t height, uint8_t width) {
     this->img_manager = ptr;
 }
 
-char* Png::to_ascii() {
+char* Png::to_ascii(float gamma) {
     this->downscale(HEIGHT_DOWNSIZE, WIDTH_DOWNSIZE);
     Luminance_View * lum = this->img_manager->luminance(BACKGROUND_IMG);
+    if (gamma != 1) lum->gamma_correction(gamma);
     return lum->gen_artscii();
 }

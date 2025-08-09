@@ -31,6 +31,8 @@ public:
      * @note reminder to delete the char arr after using.
      */
     char * gen_artscii();
+
+    void gamma_correction(float);
 };
 
 class Img_Manager {

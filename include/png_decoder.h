@@ -34,7 +34,7 @@ public:
     /**
      *
      */
-    char* to_ascii();
+    char* to_ascii(float);
 };
 
 #endif
