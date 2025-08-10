@@ -21,6 +21,7 @@ public:
      * @param width width of luminance image
      */
     Luminance_View(uint32_t, uint32_t);
+    ~Luminance_View();
 
     /**
      * create a char array size width * height where each character is
@@ -46,6 +47,7 @@ public:
      * @brief create Img_Manager object that has initialized empty rgb arrays
      */
     Img_Manager(uint32_t, uint32_t);
+    ~Img_Manager();
 
     // methods
 

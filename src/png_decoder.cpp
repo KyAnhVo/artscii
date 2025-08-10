@@ -120,6 +120,13 @@ Png::Png(std::string file_name) {
     this->height = height;
 }
 
+Png::~Png() {
+    if (this->fp)
+        fclose(this->fp);
+    if (this->img_ptr || this->info_ptr)
+        png_destroy_read_struct(&this->img_ptr, &this->info_ptr, nullptr);
+}
+
 Img_Manager * Png::read_image() {
     // poing all of row pointers to its corresponding place
     // in this->img_manager->rgba

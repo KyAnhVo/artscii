@@ -16,6 +16,10 @@ Luminance_View::Luminance_View(uint32_t height, uint32_t width) {
     this->luminance = new float[area];
 }
 
+Luminance_View::~Luminance_View() {
+    delete[] this->luminance;
+}
+
 Luminance_View * Img_Manager::luminance(uint8_t r, uint8_t g, uint8_t b) {
     Luminance_View * luminance = new Luminance_View(this->height, this->width);
 
@@ -63,6 +67,10 @@ Img_Manager::Img_Manager(uint32_t height, uint32_t width) {
     this->width     = width;
     uint64_t area   = static_cast<uint64_t>(height) * static_cast<uint64_t>(width);
     this->rgba      = new uint8_t[area * 4]; // because r, g, b, a is 4 vals.
+}
+
+Img_Manager::~Img_Manager() {
+    delete[] this->rgba;
 }
 
 void Img_Manager::downsize(uint8_t height_downsize_ratio, uint8_t width_downsize_ratio) {

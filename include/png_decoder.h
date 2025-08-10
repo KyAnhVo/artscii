@@ -20,6 +20,7 @@ public:
      * @param file_name the path to the file
      */
     Png(std::string);
+    ~Png();
 
     /**
      * @brief read image to this->img_manager
