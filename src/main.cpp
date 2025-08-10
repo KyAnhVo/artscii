@@ -35,16 +35,17 @@ int main(int argc, char ** argv) {
         return 1;
     }
 
-    img->read_image();
-    img->downscale(scale_down, scale_down);
-    std::cout << img->img_manager->height << 'x' << img->img_manager->width << std::endl << std::endl;
-    img->downscale(2, 2);
-    char* text = img->to_ascii(gamma);
+    Img_Manager * img_manager = img->read_image();
+    img_manager->downsize(scale_down, scale_down);
+    img_manager->downsize(2, 1);
 
+    Luminance_View * lum = img_manager->luminance(255, 255, 255);
+    lum->gamma_correction(gamma);
+    char * text = lum->gen_artscii();
 
     uint64_t ind = 0;
-    for (int i = 0; i < img->img_manager->height; i++) {
-        for (int j = 0; j < img->img_manager->width; j++) {
+    for (int i = 0; i < img_manager->height; i++) {
+        for (int j = 0; j < img_manager->width; j++) {
             std::cout << text[ind];
             ind++;
         }

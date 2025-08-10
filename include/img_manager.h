@@ -58,7 +58,7 @@ public:
      * @return The pointer to a new Img_Manager downsized by
      * those factors.
      */
-    Img_Manager * downsize(uint8_t, uint8_t);
+    void downsize(uint8_t, uint8_t);
 
     /**
      * @brief recolor the image to its luminance analysis

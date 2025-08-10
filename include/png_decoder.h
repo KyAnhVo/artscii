@@ -7,7 +7,7 @@
 
 class Png {
 public:
-    Img_Manager *   img_manager;
+    uint32_t width, height;
     FILE * fp;
     png_structp     img_ptr;
     png_infop       info_ptr;
@@ -24,17 +24,7 @@ public:
     /**
      * @brief read image to this->img_manager
      */
-    void read_image();
-
-    /**
-     * Downscale the image in img_manager
-     */
-    void downscale(uint8_t, uint8_t);
-
-    /**
-     *
-     */
-    char* to_ascii(float);
+    Img_Manager * read_image();
 };
 
 #endif
