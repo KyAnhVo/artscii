@@ -6,8 +6,8 @@
 !/src
 !/src/**
 
-!/mac
-!/mac/**
+!/mac_os
+!/mac_os/**
 
 !/windows
 !/windows/**
