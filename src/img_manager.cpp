@@ -69,35 +69,47 @@ Img_Manager::Img_Manager(uint32_t height, uint32_t width) {
     this->rgba      = new uint8_t[area * 4]; // because r, g, b, a is 4 vals.
 }
 
+Img_Manager::Img_Manager(const Img_Manager& other) {
+    this->width = other.width;
+    this->height = other.height;
+    uint64_t area =
+        static_cast<uint64_t>(this->width) * static_cast<uint64_t>(this->height) * 4;
+    for (uint64_t i = 0; i < area; i++)
+        this->rgba[i] = other.rgba[i];
+}
+
 Img_Manager::~Img_Manager() {
     delete[] this->rgba;
 }
 
-void Img_Manager::downsize(uint8_t height_downsize_ratio, uint8_t width_downsize_ratio) {
+void Img_Manager::downsize(float height_downsize_ratio, float width_downsize_ratio) {
     // each pixel of the downsized image is map to its
     // height_downsize_ratio x width_downsize_ratio 
     // corresponding square.
 
-    uint16_t block_size = height_downsize_ratio * width_downsize_ratio;
-    uint32_t downsized_width = this->width / width_downsize_ratio,
-             downsized_height = this->height / height_downsize_ratio;
-    uint8_t * downsized = new uint8_t[downsized_width * downsized_height * 4];
+    uint32_t downsized_width    = static_cast<uint32_t>(this->width / width_downsize_ratio),
+             downsized_height   = static_cast<uint32_t>(this->height / height_downsize_ratio);
+    uint8_t * downsized         = new uint8_t[downsized_width * downsized_height * 4];
     
     for (uint32_t downsized_row = 0; downsized_row < downsized_height; downsized_row++) {
         for (uint32_t downsized_col = 0; downsized_col < downsized_width; downsized_col++) {
 
             uint64_t downsized_ind = (downsized_row * downsized_width + downsized_col) * 4;
 
-            uint32_t starting_row = downsized_row * height_downsize_ratio,
-                     starting_col = downsized_col * width_downsize_ratio;
+            uint32_t starting_row   = static_cast<uint32_t>(downsized_row * height_downsize_ratio),
+                     starting_col   = static_cast<uint32_t>(downsized_col * width_downsize_ratio),
+                     ending_row     = static_cast<uint32_t>((downsized_row + 1) * height_downsize_ratio),
+                     ending_col     = static_cast<uint32_t>((downsized_col + 1) * width_downsize_ratio);
+
             uint64_t r_tot = 0, 
                      g_tot = 0, 
                      b_tot = 0, 
                      a_tot = 0;
+
             uint8_t max_a = 0;
 
-            for (uint32_t row = starting_row; row < starting_row + height_downsize_ratio; row++) {
-                for (uint32_t col = starting_col; col < starting_col + width_downsize_ratio; col++) {
+            for (uint32_t row = starting_row; row < ending_row; row++) {
+                for (uint32_t col = starting_col; col < ending_col; col++) {
                     uint64_t original_ind = (row * this->width + col) * 4;
                     uint8_t curr_a = this->rgba[original_ind + 3];
                     

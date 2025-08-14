@@ -47,6 +47,15 @@ public:
      * @brief create Img_Manager object that has initialized empty rgb arrays
      */
     Img_Manager(uint32_t, uint32_t);
+
+    /**
+     * @brief create Img_Manager object that is a deep copy of another Img_Manager object
+     */
+    Img_Manager(const Img_Manager&);
+
+    /**
+     * @brief destruct the current Img_Manager object and its rgba array.
+     */
     ~Img_Manager();
 
     // methods
@@ -60,7 +69,7 @@ public:
      * @return The pointer to a new Img_Manager downsized by
      * those factors.
      */
-    void downsize(uint8_t, uint8_t);
+    void downsize(float, float);
 
     /**
      * @brief recolor the image to its luminance analysis

@@ -5,7 +5,7 @@
 #include <string>
 #include <png.h>
 
-class Png {
+class Png_Input {
 public:
     uint32_t width, height;
     FILE * fp;
@@ -19,8 +19,8 @@ public:
      *
      * @param file_name the path to the file
      */
-    Png(std::string);
-    ~Png();
+    Png_Input(std::string);
+    ~Png_Input();
 
     /**
      * @brief read image to this->img_manager

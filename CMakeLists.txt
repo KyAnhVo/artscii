@@ -9,7 +9,6 @@ find_package(PNG REQUIRED)
 
 # Include Directories
 include_directories(${CMAKE_SOURCE_DIR}/include)
-
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable(artscii ${SOURCES})
