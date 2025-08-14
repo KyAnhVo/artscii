@@ -1,3 +1,0 @@
-/Users/kyanhvo/projects/artscii/build/CMakeFiles/artscii.dir
-/Users/kyanhvo/projects/artscii/build/CMakeFiles/edit_cache.dir
-/Users/kyanhvo/projects/artscii/build/CMakeFiles/rebuild_cache.dir
