@@ -3,6 +3,12 @@ set -e
 
 echo "Installing ArtSCII for MacOS\n"
 
+# Make sure artscii is in the same dir
+if [ ! -f ./artscii ]; then
+    echo "Error: cannot find artscii"
+    exit 1
+fi
+
 # Make sure homebrew is installed
 if ! command -v brew &> /dev/null; then
     echo "Installing Homebrew"
@@ -10,15 +16,10 @@ if ! command -v brew &> /dev/null; then
 fi
 echo "Homebrew Installed\n"
 
-# libpng
-echo "Installing libpng"
-brew install libpng &>/dev/null
+# Dependencies
+echo "Installing dependencies"
+brew install libpng ffmpeg &>/dev/null
 echo "libpng installed\n"
-
-# ffmpeg
-echo "Installing ffmpeg"
-brew install ffmpeg &>/dev/null
-echo "ffmpeg installed\n"
 
 # move to /usr/local/bin (probably on path)
 echo "Moving executable to /usr/local/bin"
@@ -28,4 +29,10 @@ sudo cp ./artscii /usr/local/bin/artscii
 chmod +x /usr/local/bin/artscii
 echo "Move complete\n"
 
-echo "Finished installation\n"
+if command -v artscii &>/dev/null; then
+    echo "Installation completed"
+else
+    echo "Installation failed"
+    exit 1
+fi
+
