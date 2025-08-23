@@ -4,8 +4,11 @@
 #include <string>
 
 #include <stdlib.h>
+#include <cstring>
 
 #include "png_decoder.h"
+#include "img_manager.h"
+#include "artscii_processor.h"
 
 void print_help_message();
 
@@ -72,9 +75,9 @@ int main(int argc, char ** argv) {
 
     Img_Manager * img_manager = img->read_image();
     img_manager->downsize(zoom, zoom);
-    img_manager->downsize(2, 1);
+    img_manager->downsize(8, 8);
 
-    Luminance_View * lum = img_manager->luminance(255, 255, 255);
+    Artscii_Processor * lum = img_manager->luminance(255, 255, 255);
     lum->gamma_correction(gamma);
     char * text = lum->gen_artscii();
 
