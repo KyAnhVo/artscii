@@ -2,7 +2,8 @@
 #define ARTSCII_PROCESSOR_H
 
 #include <stdint.h>
-#include "img_manager.h"
+
+class Img_Manager;
 
 /**
  * @brief a luminance view of an Img_Manager, containing
@@ -10,6 +11,8 @@
  */
 class Artscii_Processor {
 private:
+    static uint8_t char_bitmap[128][64];
+    static uint8_t bitmap_created;
 public:
     static constexpr char artscii_chars[] = " .-=+*#@";
     uint32_t height, width;
@@ -25,7 +28,7 @@ public:
     ~Artscii_Processor();
 
     /**
-     * gamme-correct the array, essentially "adjust the brightness".
+     * gamma-correct the array, essentially "adjust the brightness".
      * gamma = 1 is normal, gamma < 1 is dark, gamma > 1 is bright.
      * limit gamma from 0.5 to 3.
      *

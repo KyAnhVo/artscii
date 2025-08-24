@@ -1,4 +1,5 @@
 #include "artscii_processor.h"
+#include "img_manager.h"
 
 #include <iostream>
 #include <math.h>
@@ -36,7 +37,7 @@ char * Artscii_Processor::gen_artscii() {
 Img_Manager * Artscii_Processor::gen_artscii_bitmap() {
     Img_Manager * artscii_img = new Img_Manager(this->height * 8, this->width * 8);
     
-
+    
 
     return artscii_img;
 }

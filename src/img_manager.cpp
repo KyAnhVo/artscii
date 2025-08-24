@@ -1,14 +1,10 @@
 #include "img_manager.h"
+#include "artscii_processor.h"
 
 #include <cstdint>
 
 #define HEIGHT_DOWNSIZE 2
 #define WIDTH_DOWNSIZE  1
-
-
-
-
-// ==== CLASS: IMG_MANAGER ====
 
 Img_Manager::Img_Manager(uint32_t height, uint32_t width) {
     this->height    = height;
