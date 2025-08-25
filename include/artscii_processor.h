@@ -45,7 +45,15 @@ public:
      * @note reminder to delete the char arr after using.
      */
     char * gen_artscii();
-
+    
+    /**
+     * @brief generate pixelized artscii image in the form of an Img_Manager *
+     *
+     * Convert the artscii processor's luminance values, convert each luminance
+     * value into a 8x8 square char.
+     *
+     * @return pointer to the created Img_Manager.
+     */
     Img_Manager * gen_artscii_bitmap();
 };
 
