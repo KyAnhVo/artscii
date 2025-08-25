@@ -11,8 +11,9 @@ class Img_Manager;
  */
 class Artscii_Processor {
 private:
-    static uint8_t char_bitmap[128][64];
-    static uint8_t bitmap_created;
+    static uint8_t  char_bitmap[128][64];
+    static uint8_t  bitmap_created;
+    static void     gen_char_bitmap();
 public:
     static constexpr char artscii_chars[] = " .-=+*#@";
     uint32_t height, width;
