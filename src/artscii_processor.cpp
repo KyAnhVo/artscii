@@ -5,6 +5,7 @@
 #include <math.h>
 
 uint8_t Artscii_Processor::bitmap_created = 0;
+uint8_t Artscii_Processor::char_bitmap[128][64];
 
 void copy_bitmap(uint8_t * arr, uint8_t * original) {
     for (uint8_t i = 0; i < 64; i++) {
@@ -176,7 +177,8 @@ Img_Manager * Artscii_Processor::gen_artscii_bitmap() {
             uint8_t * curr_char_bitmap  = Artscii_Processor::char_bitmap[artscii_arr[current_pixel]];
 
             for (uint32_t i = 0; i < 8; i++) {
-                uint32_t row_starting_pixel = (starting_row + i) * artscii_img->width + starting_col;
+                uint64_t row_starting_pixel = 
+                    static_cast<uint64_t>(starting_row + i) * static_cast<uint64_t>(artscii_img->width) + static_cast<uint64_t>(starting_col);
                 for (uint32_t j = 0; j < 8; j++) {
 
                     // handle current pixel

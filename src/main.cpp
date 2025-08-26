@@ -74,8 +74,7 @@ int main(int argc, char ** argv) {
     }
 
     Img_Manager * img_manager = img->read_image();
-    img_manager->downsize(zoom, zoom);
-    img_manager->downsize(8, 8);
+    img_manager->downsize(zoom * 8, zoom * 8);
 
     Artscii_Processor * lum = img_manager->luminance(255, 255, 255);
     lum->gamma_correction(gamma);
@@ -89,6 +88,9 @@ int main(int argc, char ** argv) {
         }
         std::cout << std::endl;
     }
+
+    Img_Manager * bitmapped = lum->gen_artscii_bitmap();
+    bitmapped->to_png(nullptr);
 
     delete img;
     delete img_manager;
