@@ -2,8 +2,10 @@
 #include "artscii_processor.h"
 
 #include <cstdint>
+#include <stdexcept>
 #include <stdlib.h>
 #include <stdio.h>
+#include <png.h>
 
 #define HEIGHT_DOWNSIZE 2
 #define WIDTH_DOWNSIZE  1
@@ -115,7 +117,47 @@ void Img_Manager::to_png(char * path) {
         path = (char *) "./artscii_img.png";
     }
     
+    // setup writing structs
+
     FILE * output_file = fopen(path, "wb");
-}
+    if (!output_file) {
+        throw std::runtime_error("cannot create output file");
+    }
+
+    png_structp png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
+    if (!png_ptr) {
+        fclose(output_file);
+        throw std::runtime_error("cannot write png file");
+    }
+
+    png_infop info_ptr = png_create_info_struct(png_ptr);
+    if (!info_ptr) {
+        png_destroy_write_struct(&png_ptr, nullptr);
+        fclose(output_file);
+        throw std::runtime_error("cannot write png info ptr");
+    }
+
+    // set err handling, connect output_file to image structs
+
+    if (setjmp(png_jmpbuf(png_ptr))) {
+        png_destroy_write_struct(&png_ptr, &info_ptr);
+        fclose(output_file);
+        throw std::runtime_error("Error in writing image");
+    }
+
+    png_init_io(png_ptr, output_file);
+
+    // write IHDR
+
+    png_set_IHDR(png_ptr, info_ptr,          // write structs
+            this->width, this->height,      // dimensions 
+            8,                              // bit depth
+            PNG_COLOR_TYPE_RGBA,
+            PNG_INTERLACE_NONE,
+            PNG_COMPRESSION_TYPE_DEFAULT,
+            PNG_FILTER_TYPE_DEFAULT);
+
+
+} 
 
 
