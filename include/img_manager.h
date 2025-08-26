@@ -57,6 +57,12 @@ public:
      */
     Artscii_Processor * luminance(uint8_t r, uint8_t g, uint8_t b);
     
+    /**
+     * @brief export the current img_manager to png image with given path
+     *
+     * @param path path to new file
+     */
+    void to_png(char *);
 };
 
 #endif

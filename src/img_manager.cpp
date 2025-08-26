@@ -2,6 +2,8 @@
 #include "artscii_processor.h"
 
 #include <cstdint>
+#include <stdlib.h>
+#include <stdio.h>
 
 #define HEIGHT_DOWNSIZE 2
 #define WIDTH_DOWNSIZE  1
@@ -107,3 +109,13 @@ Artscii_Processor * Img_Manager::luminance(uint8_t r, uint8_t g, uint8_t b) {
 
     return luminance;
 }
+
+void Img_Manager::to_png(char * path) {
+    if (!path) {
+        path = (char *) "./artscii_img.png";
+    }
+    
+    FILE * output_file = fopen(path, "wb");
+}
+
+

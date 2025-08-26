@@ -141,8 +141,8 @@ Artscii_Processor::~Artscii_Processor() {
 }
 
 void Artscii_Processor::gamma_correction(float gamma) {
-    if (gamma < 0) {
-        std::cerr << "gamma must be more than or equal to 0, reset to 1" << std::endl;
+    if (gamma < 0.5 || gamma > 3) {
+        std::cerr << "gamma range [0.5, 3], reset to 1" << std::endl;
         return;
     }
     for (uint64_t i = 0; i < this->width * this->height; i++) {
