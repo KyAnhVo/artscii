@@ -157,7 +157,23 @@ void Img_Manager::to_png(char * path) {
             PNG_COMPRESSION_TYPE_DEFAULT,
             PNG_FILTER_TYPE_DEFAULT);
 
+    // write image
+    
+    png_write_info(png_ptr, info_ptr);
 
+    // setup image ptr
+    uint8_t ** row_ptrs = new uint8_t*[this->height];
+    for (uint32_t i = 0; i < this->height; i++)
+        row_ptrs[i] = this->rgba + 4 * i * this->width;
+    
+    // write to image
+    png_write_image(png_ptr, row_ptrs);
+
+    // clean mem
+
+    png_destroy_write_struct(&png_ptr, &info_ptr);
+    fclose(output_file);
+    delete[] row_ptrs;
 } 
 
 
