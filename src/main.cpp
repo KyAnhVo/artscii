@@ -13,7 +13,7 @@
 void print_help_message();
 
 int main(int argc, char ** argv) {
-    if (argc != 2 && argc != 4 && argc != 6) {
+    if (argc < 2 || argc > 9) {
         std::cerr << "Invalid input. Use -h or --help to see usage." << std::endl;
         return 1;
     }
@@ -25,14 +25,35 @@ int main(int argc, char ** argv) {
 
     float gamma = 1;
     float zoom = 1;
+    char * save_file = nullptr;
+    uint8_t preview = 0;
     for (int i = 2; i < argc; i++) {
         if (strcmp(argv[i], "-b") == 0 || strcmp(argv[i], "--brightness") == 0) {
             i += 1;
+            if (i == argc) {
+                std::cerr << "Require input for at least 1 option" << std::endl;
+                return 1;
+            }
             gamma = std::stof(argv[i]);
         }
         else if (strcmp(argv[i], "-z") == 0 || strcmp(argv[i], "--zoom") == 0) {
             i += 1;
+            if (i == argc) {
+                std::cerr << "Require input for at least 1 option" << std::endl;
+                return 1;
+            }
             zoom = std::stof(argv[i]);
+        }
+        else if (strcmp(argv[i], "-s") == 0 || strcmp(argv[i], "--store") == 0) {
+            i += 1;
+            if (i == argc) {
+                std::cerr << "Require input for at least 1 option" << std::endl;
+                return 1;
+            }
+            save_file = argv[i];
+        }
+        else if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "--preview") == 0) {
+            preview = 1;
         }
         else {
             std::cerr << "Invalid input. Use -h or --help to see usage." << std::endl;
@@ -78,15 +99,17 @@ int main(int argc, char ** argv) {
 
     Artscii_Processor * lum = img_manager->luminance(255, 255, 255);
     lum->gamma_correction(gamma);
-    char * text = lum->gen_artscii();
 
-    uint64_t ind = 0;
-    for (int i = 0; i < img_manager->height; i++) {
-        for (int j = 0; j < img_manager->width; j++) {
-            std::cout << text[ind];
-            ind++;
+    if (preview) {
+        char * text = lum->gen_artscii();
+        uint64_t ind = 0;
+        for (int i = 0; i < img_manager->height; i++) {
+            for (int j = 0; j < img_manager->width; j++) {
+                std::cout << text[ind];
+                ind++;
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
     }
 
     Img_Manager * bitmapped = lum->gen_artscii_bitmap();
